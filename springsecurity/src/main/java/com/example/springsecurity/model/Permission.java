@@ -7,7 +7,7 @@ public enum Permission
     private final String PERMISSION;
 
     Permission(String permission) {
-        PERMISSION = permission;
+        this.PERMISSION = permission;
     }
 
     public String getPERMISSION()
