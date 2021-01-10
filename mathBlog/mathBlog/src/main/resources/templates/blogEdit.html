@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="AddArticle"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header
+        th:insert="header :: header">
+</header>
+
+<div class="container mt-5 mb-5">
+    <h1> Main blog </h1>
+    <div th:each="postElement : ${post}">
+        <form method="post">
+            <input type = "text" th:value="${postElement.title}" name = "title" class="form-control"><br>
+            <input type = "text" th:value="${postElement.anons}"name = "anons" class="form-control"><br>
+            <textarea th:value="${postElement.fullText}" name = "fullText" class="form-control"></textarea><br>
+            <button type="submit" class = "btn btn-success">Article is ready!</button>
+        </form>
+    </div>
+</div>
+<div
+        th:insert="footer :: footer">
+</div>
+</body>
+</html>
+
